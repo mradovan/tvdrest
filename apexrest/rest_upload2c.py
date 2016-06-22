@@ -35,7 +35,7 @@ if 1==1:
     (temperature,pressure) = readBmp180()
     if ltemp != temperature:
         ltemp = temperature
-        response = urllib2.urlopen(url,getparams(ltemp)).read()
+        response = urllib2.urlopen(urlt,getparams(ltemp)).read()
         print(ltemp)
     #if lpres != pressure:
     #    lpres = pressure
