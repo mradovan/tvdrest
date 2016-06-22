@@ -22,6 +22,12 @@ def gettime():
 t.tm_hour, t.tm_min, t.tm_sec)
     return dtime
 
+def getparams(tval):
+    params = urllib.urlencode({
+        'value'   : tval
+    })
+return params    
+    
 print('Trivadis Data Uploader for server room 5')
 #while 1:
 if 1==1:
@@ -29,12 +35,8 @@ if 1==1:
     (temperature,pressure) = readBmp180()
     if ltemp != temperature:
         ltemp = temperature
-        postdata = {'value': ltemp}
-        req = urllib2.Request(urlt)
-        req.add_header('Content_Type', 'application/json')
-        data=json.dumps(postdata)
+        response = urllib2.urlopen(url,getparams(ltemp)).read()
         print(ltemp)
-        response = urllib2.urlopen(urlt, postdata)
     #if lpres != pressure:
     #    lpres = pressure
     #    response = urllib2.urlopen(url,getparams(ltime, 'TPRES', pressure)).read()
