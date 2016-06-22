@@ -33,7 +33,8 @@ if 1==1:
         req = urllib2.Request(urlt)
         req.add_header('Content_Type', 'application/json')
         data=json.dumps(postdata)
-        response = urllib2.urlopen(urlt,postdata)
+        print(ltemp)
+        #response = urllib2.urlopen(urlt,postdata)
     #if lpres != pressure:
     #    lpres = pressure
     #    response = urllib2.urlopen(url,getparams(ltime, 'TPRES', pressure)).read()
