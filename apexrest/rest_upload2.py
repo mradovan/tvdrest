@@ -3,7 +3,7 @@ import urllib2
 import time
 from bmp180 import readBmp180
 
-url = 'https://apex.oracle.com/pls/apex/kazaliste/postme/testme/'
+url = 'https://apexea.oracle.com/pls/apex/mradovan/postdata/measvals/'
 
 def getsec():
     t = time.localtime()
@@ -15,10 +15,11 @@ def gettime():
 t.tm_hour, t.tm_min, t.tm_sec)
     return dtime
 
-def getparams(ttyp, tval):
+def getparams(ptime, ttyp, tval):
     params = urllib.urlencode({
-        'MID': ttyp,
-        'VAL': tval
+        'DTIME' : ptime,
+        'MID'   : ttyp,
+        'VAL'   : tval
     })
     return params
 
@@ -34,6 +35,6 @@ if lnow > 0:
 print
 (temperature,pressure) = readBmp180()
 print('Server room data at %s: Temperature: %s C, Pressure: %s hPa' % 
-(gettime(), temperature, pressure))
-response = urllib2.urlopen(url,getparams('TTEMP', temperature)).read()
-response = urllib2.urlopen(url,getparams('TPRES', pressure)).read()
+(ltime, temperature, pressure))
+response = urllib2.urlopen(url,getparams(ltime, 'TTEMP', temperature)).read()
+response = urllib2.urlopen(url,getparams(ltime, 'TPRES', pressure)).read()
