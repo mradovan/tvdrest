@@ -6,8 +6,8 @@ import time
 import sys
 from bmp180 import readBmp180
 
-urlt = 'http://things.ubidots.com/api/v1.6/variables/576a39c176254202a19d1123/values/?token=owZKtjFwxoYN83wGrw5gMtwSiyQcOz'
-urlp = 'https://things.ubidots.com/api/v1.6/devices/ServerRoom/Temperature/values?token=owZKtjFwxoYN83wGrw5gMtwSiyQcOz'
+urlt = 'https://things.ubidots.com/api/v1.6/variables/576a39c176254202a19d1123/values/?token=owZKtjFwxoYN83wGrw5gMtwSiyQcOz'
+urlp = 'https://things.ubidots.com/api/v1.6/variables/576a39cc76254202bd8f645d/values?token=owZKtjFwxoYN83wGrw5gMtwSiyQcOz'
 
 ltemp = None
 lpres = None
