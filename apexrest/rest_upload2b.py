@@ -6,7 +6,7 @@ import time
 import sys
 from bmp180 import readBmp180
 
-urlt = 'https://things.ubidots.com/api/v1.6/devices/ServerRoom/Temperature/values?token=owZKtjFwxoYN83wGrw5gMtwSiyQcOz'
+urlt = 'http://things.ubidots.com/api/v1.6/devices/ServerRoom/Temperature/values?token=owZKtjFwxoYN83wGrw5gMtwSiyQcOz'
 urlp = 'https://things.ubidots.com/api/v1.6/devices/ServerRoom/Temperature/values?token=owZKtjFwxoYN83wGrw5gMtwSiyQcOz'
 
 ltemp = None
@@ -34,7 +34,7 @@ if 1==1:
         req.add_header('Content_Type', 'application/json')
         data=json.dumps(postdata)
         print(ltemp)
-        #response = urllib2.urlopen(urlt,postdata)
+        response = urllib2.urlopen(urlt, postdata)
     #if lpres != pressure:
     #    lpres = pressure
     #    response = urllib2.urlopen(url,getparams(ltime, 'TPRES', pressure)).read()
