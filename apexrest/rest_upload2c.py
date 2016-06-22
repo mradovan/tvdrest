@@ -29,16 +29,15 @@ def getparams(tval):
     return params    
     
 print('Trivadis Data Uploader for server room 5')
-#while 1:
-if 1==1:
+while 1:
     ltime = gettime()
     (temperature,pressure) = readBmp180()
     if ltemp != temperature:
         ltemp = temperature
         response = urllib2.urlopen(urlt,getparams(ltemp)).read()
-        print(ltemp)
-    #if lpres != pressure:
-    #    lpres = pressure
-    #    response = urllib2.urlopen(url,getparams(ltime, 'TPRES', pressure)).read()
-    #while getsec() > 0:    
-    #   time.sleep(1)
+        #print(ltemp)
+    if lpres != pressure:
+        lpres = pressure
+        response = urllib2.urlopen(urlp,getparams(lpres)).read()
+    while getsec() > 0:    
+       time.sleep(1)
