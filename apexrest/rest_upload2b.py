@@ -23,7 +23,7 @@ t.tm_hour, t.tm_min, t.tm_sec)
 
 print('Trivadis Data Uploader for server room 5')
 #while 1:
-if 1=1:
+if 1==1:
     ltime = gettime()
     (temperature,pressure) = readBmp180()
     if ltemp != temperature:
