@@ -26,7 +26,7 @@ def getparams(tval):
     params = urllib.urlencode({
         'value'   : tval
     })
-return params    
+    return params    
     
 print('Trivadis Data Uploader for server room 5')
 #while 1:
